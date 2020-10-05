@@ -18,7 +18,7 @@ module.exports = {
    const embed = new Discord.MessageEmbed()
    .setTitle("Channel Updates")
    .setDescription(`<a:drop_tick:755335555402956800>${message.channel} has been Locked by a staff member 
-**You Are Not Muted** more updates will be send in this channel 
+ more updates will be send in this channel **You Are Not Muted**
 \nReason: ${reason}`)
    .setColor("RANDOM");
    await message.channel.send(embed);
