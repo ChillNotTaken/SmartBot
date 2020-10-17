@@ -1,38 +1,28 @@
-const Discord = require("discord.js");
-const { MessageEmbed } = require("discord.js");
-const { Color } = require("../../config.json");
-const figlet = require("figlet");
-const { promisify } = require("util");
-const figletAsync = promisify(figlet);
+const discord = require("discord.js");
+const figlet = require("figlet"); // MAKE SURE TO INSTALL FIGLET PACKAGE OR CODE WONT WORK
 
 module.exports = {
-  name: "ascii",
-  aliases: null,
-  category: "fun",
-  description: "Ascii Art!",
-  usage: "Ascii <Text>",
-  accessableby: "everyone",
-  run: async (client, message, args) => {
-    //Start
+    name: "ascii",
+    aliases: [],
+    category: "Fun",
+    usage: "ascii <text>",
+    description: "Returns provided text in ascii format.",
+    run: async (client, message, args) => {
 
-    let Content = args.join(" ");
-
-    if (!Content) return message.channel.send(`Please Give Me Text!`);
-
-    if (args.length === 1) return message.channel.send(`1 Word Really?`);
-
-    if (Content.length > 20)
-      return message.channel.send(`Please Make Shorter! | Limit : 20`);
-
-    let Result = await figletAsync(Content);
-
-    let embed = new MessageEmbed()
-      .setColor(Color)
-      .setDescription("```" + Result + "```")
-      .setTimestamp();
-
-    message.channel.send(embed);
-
-    //End
-  }
+   let text = args.join(" ");
+   if(!text) {
+return message.channel.send(`Please provide text for the ascii conversion!`)
+}
+   let maxlen = 20
+if(text.length > 20) {
+return message.channel.send(`Please put text that has 20 characters or less because the conversion won't be good!`)
+}
+ // AGAIN, MAKE SURE TO INSTALL FIGLET PACKAGE!  
+figlet(text, function(err, data) {
+message.channel.send(data, {
+code: 'AsciiArt' 
+});
+})
+message.delete();
+    }
 };

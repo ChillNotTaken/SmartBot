@@ -8,7 +8,7 @@ module.exports = {
   run: async (bot, message, args) => {
         if (!message.member.hasPermission("KICK_MEMBERS"))
       return message.channel.send(
-        `:x: You Don't Have Permission To Use This Command!`
+        `<a:wrong:752200833348665354>You Don't Have Permission To Use This Command!`
       );
     if (!args[0]) return message.channel.send(`You did not specify your time!`);
     if (
@@ -50,7 +50,7 @@ module.exports = {
         .users.cache.filter((u) => !u.bot)
         .random();
       channel.send(
-        `<a:drop_tick:755335555402956800>The winner of the giveaway for **${prize}** is... ${winner}`
+        `The winner of the giveaway for **${prize}** is... ${winner}`
       );
     }, ms(args[0]));
   },

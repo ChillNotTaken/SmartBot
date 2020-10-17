@@ -5,7 +5,7 @@ const { Color } = require("../../config.json");
 module.exports = {
     name: "choose",
     aliases: null,
-    category: "fun",
+    category: "fun",  
     description: "Bot Choose Something!",
     usage: "Choose <Text> Or <Text>",
     accessableby: "everyone",
@@ -39,8 +39,8 @@ module.exports = {
         .setFooter(`Requested by ${message.author.username}`)
         .setTimestamp();
 
-        message.channel.send(embed);
-
+        message.channel.send(embed)
+        message.delete();
         //End
 
     }

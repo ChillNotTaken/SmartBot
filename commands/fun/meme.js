@@ -26,8 +26,9 @@ module.exports = {
             .setFooter(`From /r/${json.subreddit}`);
 
           message.channel.send(embed);
+          message.delete();
         });
-
+           
         //End
 
     }

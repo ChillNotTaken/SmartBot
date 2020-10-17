@@ -9,7 +9,7 @@ module.exports = {
     
     
     if(!message.member.hasPermission("ADMINISTRATOR")) {
-      return message.channel.send("You should have admin perms to use this command")
+      return message.channel.send("<a:wrong:752200833348665354>You should have admin perms to use this command")
     }
     
     const user = message.mentions.members.first()
@@ -19,11 +19,11 @@ module.exports = {
     }
     
     if(message.mentions.users.first().bot) {
-      return message.channel.send("Bot are not allowed to have warnings")
+      return message.channel.send("<a:wrong:752200833348665354>Bot are not allowed to have warnings")
     }
     
     if(message.author.id === user.id) {
-      return message.channel.send("You are not allowed to reset your warnings")
+      return message.channel.send("<a:wrong:752200833348665354>You are not allowed to reset your warnings")
     }
     
     let warnings = db.get(`warnings_${message.guild.id}_${user.id}`)
@@ -34,7 +34,7 @@ module.exports = {
     
     db.delete(`warnings_${message.guild.id}_${user.id}`)
     user.send(`Your all warnings are reseted by ${message.author.username} from ${message.guild.name}`)
-    await message.channel.send(`<a:drop_tick:755335555402956800>Reseted all warnings of ${message.mentions.users.first().username}`)
+    await message.channel.send(`Reseted all warnings of ${message.mentions.users.first().username}`)
     
   
     

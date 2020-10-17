@@ -26,14 +26,14 @@ module.exports = {
       })
 
       db.set(`cmd_${message.guild.id}`, filter)
-      return message.channel.send(`<a:drop_tick:755335555402956800>Deleted the **${cmdname}** Command!`)
+      return message.channel.send(`Deleted the **${cmdname}** Command!`)
 
 
     } else {
       return message.channel.send(":x: Sorry but i am unable to find that command!")
     
-
-
+    message.delete();  
+      
   }
   }
 }

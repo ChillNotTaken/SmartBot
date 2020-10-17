@@ -8,12 +8,12 @@ module.exports = {
   run: async (client, message, args) => {
     if (!message.member.hasPermission("MANAGE_ROLES")) {
       return message.channel.send(
-        ":x:Sorry but you do not have permission to mute anyone"
+        "Sorry but you do not have permission to mute anyone"
       );
     }
 
     if (!message.guild.me.hasPermission("MANAGE_ROLES")) {
-      return message.channel.send(":x:I do not have permission to manage roles.");
+      return message.channel.send("I do not have permission to manage roles.");
     }
 
     const user = message.mentions.members.first();
@@ -23,7 +23,7 @@ module.exports = {
     }
     
     if(user.id === message.author.id) {
-      return message.channel.send(":x:I won't mute you -_-");
+      return message.channel.send("I won't mute you -_-");
     }
     
     
@@ -31,7 +31,7 @@ module.exports = {
     
     
     if(!reason) {
-      return message.channel.send(":x:Please Give the reason to mute the member")
+      return message.channel.send("Please Give the reason to mute the member")
     }
     
   //TIME TO LET MUTED ROLE
@@ -40,12 +40,12 @@ module.exports = {
     
     
       if(!muterole) {
-      return message.channel.send("**uh oh**,This server do not have role with name `Muted`")
+      return message.channel.send("<a:wrong:752200833348665354>This server do not have role with name `Muted`")
     }
     
     
    if(user.roles.cache.has(muterole)) {
-      return message.channel.send("oopsies,Given User is already muted")
+      return message.channel.send("<a:wrong:752200833348665354>Given User is already muted")
     }
     
   
@@ -53,7 +53,7 @@ module.exports = {
     
     user.roles.add(muterole)
     
-await message.channel.send(`<a:drop_tick:755335555402956800>You muted **${message.mentions.users.first().username}** For \`${reason}\``)
+await message.channel.send(` <a:tick:752182871158161418>You muted **${message.mentions.users.first().username}** For \`${reason}\``)
     
     user.send(`You are muted in **${message.guild.name}** For \`${reason}\``)
     

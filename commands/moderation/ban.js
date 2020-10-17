@@ -14,7 +14,7 @@ module.exports = {
 
     if (!message.member.hasPermission("BAN_MEMBERS"))
       return message.channel.send(
-        `You Don't Have Permission To Use This Command!`
+        `<a:wrong:752200833348665354>You Don't Have Permission To Use This Command!`
       );
 
     let Member = message.mentions.users.first();
@@ -47,11 +47,11 @@ module.exports = {
     
     let UserRole = message.member.roles.highest.position;
     
-    if (UserRole <= Role) return message.channel.send(`I Can't Ban That Member Because That Member Has Role Position Is Higher Than My Role Or Same Role As You!`);
+    if (UserRole <= Role) return message.channel.send(`<a:wrong:752200833348665354>I Can't Ban That Member Because That Member Has Role Position Is Higher Than My Role Or Same Role As You!`);
     
-    if (BotRole <= Role) return message.channel.send(`I Can't Ban That Member Because That Member Has Role Position Is Higher Than My Role Or Same Role As Me!`);
+    if (BotRole <= Role) return message.channel.send(`<a:wrong:752200833348665354>I Can't Ban That Member Because That Member Has Role Position Is Higher Than My Role Or Same Role As Me!`);
     
-    if (!User.bannable) return message.channel.send(`I Can't Ban That Member!`)
+    if (!User.bannable) return message.channel.send(`<a:wrong:752200833348665354>I Can't Ban That Member!`)
 
     try {
       console.log(`Member Is Going To Get Ban!`);
@@ -72,7 +72,7 @@ module.exports = {
             "No Reason Provided!"}`
         );
       message.channel.send(embed);
-      console.log(`User: ${Member.tag} (${Member.id}) Just Got Banned From ${message.guild.name} for ${Reason || "No Reason Provided!"}`)
+      console.log(`User: ${Member.tag} (${Member.id}) Just Got Banned From ${message.guild.name} For ${Reason || "No Reason Provided!"}`)
     } catch (error) {
       return message.channel
         .send(
@@ -80,6 +80,7 @@ module.exports = {
         )
         .then(() => console.log(error));
     }
+     message.delete();  
 
     //End
   }

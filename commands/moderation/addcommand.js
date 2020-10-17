@@ -29,7 +29,8 @@ module.exports = {
 
     db.push(`cmd_${message.guild.id}`, data)
 
-    return message.channel.send("<a:drop_tick:755335555402956800>Added **" + cmdname.toLowerCase() + "** as a custom command in guild.")
+    return message.channel.send("Added **" + cmdname.toLowerCase() + "** as a custom command in guild.")
+      message.delete();  
 
 
   }

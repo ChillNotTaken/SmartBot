@@ -5,8 +5,8 @@ module.exports = {
    description: "Unlocks a Channel",
    category: "moderation",
    run: async(client, message, args) => {
-   if (!message.member.hasPermission('MANAGE_GUILD', 'MANAGE_CHANNELS')) {
-   return message.channel.send(":x: You don't have enough Permissions")
+   if (!message.member.hasPermission('MANAGE_SERVER', 'MANAGE_CHANNELS')) {
+   return message.channel.send("<a:wrong:752200833348665354>You don't have enough Permissions")
    }
    message.channel.overwritePermissions([
      {
@@ -16,8 +16,7 @@ module.exports = {
     ],);
    const embed = new Discord.MessageEmbed()
    .setTitle("Channel Updates")
-   .setDescription(`<a:drop_tick:755335555402956800> ${message.channel}  has been Unlocked by a staff member
-You may talk now.`)
+   .setDescription(`ًں”“ ${message.channel}  has been Unlocked`)
    .setColor("RANDOM");
    await message.channel.send(embed);
    message.delete();

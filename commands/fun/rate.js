@@ -23,9 +23,9 @@ module.exports = {
             .setDescription(`${Math.floor(Math.random() * 11)}/10 To ${Content}`)
             .setFooter(`Requested by ${message.author.username}`)
             .setTimestamp();
-
+        
         message.channel.send(embed)
-
+        message.delete();
         //End
 
     }

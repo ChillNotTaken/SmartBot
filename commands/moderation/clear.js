@@ -14,7 +14,7 @@ module.exports = {
 
     if (!message.member.hasPermission("MANAGE_MESSAGES"))
       return message.channel.send(
-        "You Don't Have Permission To Use This Command!"
+        "<a:wrong:752200833348665354>You Don't Have Permission To Use This Command!"
       );
 
     if (!args[0])
@@ -25,7 +25,7 @@ module.exports = {
 
     if (args[0] < 4)
       return message.channel.send(
-        `You Can Delete ${args[0]} By Your Self Its Not Too Many Messages!`
+        `<a:wrong:752200833348665354>You Can Delete ${args[0]} By Your Self Its Not Too Many Messages!`
       );
 
     if (args[0] > 100)

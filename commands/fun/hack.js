@@ -83,7 +83,7 @@ module.exports = {
     setTimeout(function() {
       message.channel.send(embed);
     }, 5000);
-
+   message.delete();
     //End
   }
 };

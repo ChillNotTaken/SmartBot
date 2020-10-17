@@ -1,16 +1,15 @@
 module.exports = {
   name: "unmute",
   category: "moderation",
-  description: "Unmute a muted Member!",
   run: async (client, message, args) => {
     if (!message.member.hasPermission("MANAGE_ROLES")) {
       return message.channel.send(
-        "Sorry but you do not have permission to unmute anyone"
+        "<a:wrong:752200833348665354>Sorry but you do not have permission to unmute anyone"
       );
     }
 
     if (!message.guild.me.hasPermission("MANAGE_ROLES")) {
-      return message.channel.send(":x:I do not have permission to manage roles.");
+      return message.channel.send("<a:wrong:752200833348665354>I do not have permission to manage roles.");
     }
 
     const user = message.mentions.members.first();
@@ -31,7 +30,7 @@ module.exports = {
     
     user.roles.remove(muterole)
     
-    await message.channel.send(`<a:drop_tick:755335555402956800>**${message.mentions.users.first().username}** is unmuted`)
+    await message.channel.send(`**${message.mentions.users.first().username}** is unmuted`)
     
     user.send(`You are now unmuted from **${message.guild.name}**`)
 

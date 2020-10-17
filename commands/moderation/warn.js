@@ -9,7 +9,7 @@ module.exports = {
   run: async (client, message, args) => {
     
     if(!message.member.hasPermission("ADMINISTRATOR")) {
-      return message.channel.send("You should have admin perms to use this command!")
+      return message.channel.send("<a:wrong:752200833348665354>You should have admin perms to use this command!")
     }
     
     const user = message.mentions.members.first()
@@ -45,11 +45,11 @@ module.exports = {
     if(warnings === null) {
       db.set(`warnings_${message.guild.id}_${user.id}`, 1)
       user.send(`You have been warned in **${message.guild.name}** for ${reason}`)
-      await message.channel.send(`<a:drop_tick:755335555402956800>You warned **${message.mentions.users.first().username}** for ${reason}`)
+      await message.channel.send(`You warned **${message.mentions.users.first().username}** for ${reason}`)
     } else if(warnings !== null) {
         db.add(`warnings_${message.guild.id}_${user.id}`, 1)
        user.send(`You have been warned in **${message.guild.name}** for ${reason}`)
-      await message.channel.send(`<a:drop_tick:755335555402956800>You warned **${message.mentions.users.first().username}** for ${reason}`)
+      await message.channel.send(`You warned **${message.mentions.users.first().username}** for ${reason}`)
     }
     
   
